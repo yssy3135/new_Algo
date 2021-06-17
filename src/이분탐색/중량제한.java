@@ -105,6 +105,7 @@ public class 중량제한 {
             for(int i = 0 ; i < list[cur].size();i++){
                 int get = list[cur].get(i).num;
                 int getWeight = list[cur].get(i).weight;
+                //옮길수 있는 짐이 limit 그러니까 다리의무게(getWeight)가 같거나 커야한다.
                 if(!visited[get]&&getWeight >=limit){
                     visited[get] = true;
                     que.add(list[cur].get(i));
