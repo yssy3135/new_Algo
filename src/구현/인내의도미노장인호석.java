@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+// 백준 20165 인내의 도미노장인 호석 (구현)
 public class 인내의도미노장인호석 {
     static int map[][];
     static int n;
