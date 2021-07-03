@@ -5,11 +5,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+// 백준 20164 홀수홀릭 호석
 public class 홀수홀릭호석 {
 
     static int cnt;
     static int max = 0;
     static int min = Integer.MAX_VALUE;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
