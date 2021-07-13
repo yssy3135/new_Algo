@@ -1,7 +1,5 @@
 package 스택;
 
-import javax.swing.plaf.TreeUI;
-import java.awt.event.KeyListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
