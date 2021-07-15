@@ -10,9 +10,7 @@ import java.util.StringTokenizer;
 public class N으로표현 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         solution(5,12);
-
     }
 
     static int n;
