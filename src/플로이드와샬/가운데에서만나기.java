@@ -9,17 +9,6 @@ import java.util.Comparator;
 import java.util.StringTokenizer;
 
 public class 가운데에서만나기 {
-    static class Info{
-        int num;
-        int time;
-
-        public Info(int num, int time) {
-            this.num = num;
-            this.time = time;
-        }
-    }
-
-
     static int road[][];
     static int m;
     static int n;
@@ -49,6 +38,7 @@ public class 가운데에서만나기 {
         int k = Integer.parseInt(br.readLine());
 
         String tmp[] = br.readLine().split(" ");
+
         int home[] = new int[k];
         for(int i = 0 ; i < k ;i++){
             int num = Integer.parseInt(tmp[i]);
