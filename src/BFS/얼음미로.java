@@ -66,7 +66,7 @@ public class 얼음미로 {
          * 접근
          * 4방향 탐색 그리고 탈출구까지
          * 무조건 바위나 탈출구를 만나야한다.(끝은 낭떠러지)
-         * 1.dfs로 진행
+         *
          *
          */
 
@@ -86,12 +86,7 @@ public class 얼음미로 {
     }
 
     public static void bfs(int sr,int sc){
-        pq = new PriorityQueue<>(new Comparator<Info>() {
-            @Override
-            public int compare(Info o1, Info o2) {
-                return o1.time-o2.time;
-            }
-        });
+        pq = new LinkedList<>();
 
         for(int a[]:visited){
             Arrays.fill(a,Integer.MAX_VALUE);
