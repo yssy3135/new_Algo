@@ -25,7 +25,6 @@ public class 가장긴증가하는부분수열2 {
             if(list.get(list.size()-1) < input){
                 list.add(input);
             }else{
-                System.out.println(input);
                 // 더 작다 그럼 증가하는것이 아니니깐
                 list.set(BS(input),input);
             }
@@ -41,20 +40,20 @@ public class 가장긴증가하는부분수열2 {
         int left = 0;
         int right = list.size()-1;
 
-        while(left <right){
+        while(left <= right){
             int mid = (left+right)/2;
+
             if (list.get(mid) < input) {
                 left = mid+1;
             }else {
-                right = mid;
+                right = mid-1;
             }
 
 
         }
 
 
-
-        return (left+right)/2;
+        return left;
     }
 }
 
