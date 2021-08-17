@@ -1,3 +1,5 @@
+package 자료구조;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -71,26 +73,31 @@ public class 가희와은행 {
 
         int spendTime = 0;
         while(!que.isEmpty()){
-
+//            System.out.println(spendTime+"시간"+W);
             customer head = que.peek();
             boolean flag = false;
 
             if(head.time > T){
-                spendTime +=T;
                 head.time -= T;
                 que.poll();
+                for(int i = 0 ; i < T ; i++){
+                    System.out.println(head.num);
+                    spendTime++;
+                    if(spendTime >= W) return;
+                }
                 flag = true;
             }else{
-                spendTime += head.time;
                 que.poll();
                 for(int i = 0 ; i < head.time ; i++){
                     System.out.println(head.num);
+                    spendTime++;
+                    if(spendTime >= W) return;
                 }
             }
 
             while(!wait.isEmpty()){
                 if(spendTime >= wait.peek().enterTime){
-                    System.out.println(wait.peek().num);
+//                    System.out.println("들어감"+wait.peek().num);
                     que.add(wait.poll());
                 }else{
                     break;
@@ -99,10 +106,6 @@ public class 가희와은행 {
 
             if(flag){
                 que.add(head);
-                for(int i = 0 ; i < T ; i++){
-                    System.out.println(head.num);
-                }
-
             }
 
 
