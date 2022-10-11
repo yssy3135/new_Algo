@@ -16,7 +16,6 @@ public class 미로탐색 {
     static class Point{
         int x;
         int y;
-
         Point(int x, int y){
             this.x = x;
             this.y = y;
