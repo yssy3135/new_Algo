@@ -19,6 +19,7 @@ public class 가장긴증가하는부분수열2_복습 {
 
         arr = new int[n];
         StringTokenizer st= new StringTokenizer(br.readLine());
+
         for(int i = 0 ; i < n;i++){
             arr[i] = Integer.parseInt(st.nextToken());
         }
@@ -28,33 +29,32 @@ public class 가장긴증가하는부분수열2_복습 {
 
     public static void lis(){
         ArrayList<Integer> list = new ArrayList<>();
-        for(int i = 0 ; i < n;i++){
-            int get = arr[i];
-            if(list.size() == 0 || list.get(list.size()-1) < get){
-                list.add(get);
+        for(int i = 0 ; i < n ;i++){
+            if(list.size() == 0 || list.get(list.size()-1) < arr[i]){
+                list.add(arr[i]);
             }else{
-
-                list.set(bs(list,get),get);
+                list.set(lower_bounder(list,arr[i]),arr[i]);
             }
         }
-
         System.out.println(list.size());
     }
 
-    public static int bs(ArrayList<Integer> list,int target){
+    public static int lower_bounder(ArrayList<Integer> list,int target){
+       //low_bounder 는 target보다 큰 가장 작은 정수값
         int left = 0;
         int right = list.size()-1;
+        while(left < right){
+            int mid = ( left + right )/2;
 
-        while(left<=right){
-            int mid = (left+right)/2;
-
-            if(list.get(mid) < target){
-                left = mid+1;
+            if(list.get(mid) >= target){
+                //크거나 같은거니까 포함
+                right = mid;
             }else{
-                right = mid-1;
+                //작은거니까 포함 ㄴㄴ
+                left = mid+1;
             }
-
         }
+
 
         return left;
     }
